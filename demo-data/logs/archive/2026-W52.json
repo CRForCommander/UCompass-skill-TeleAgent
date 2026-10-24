@@ -1,0 +1,192 @@
+{
+  "week_id": "2026-W52",
+  "plan": {
+    "week_id": "2026-W52",
+    "goal_time_alloc": {
+      "g1": 6.0,
+      "g2": 3.0,
+      "g3": 1.0
+    },
+    "days": [
+      {
+        "date": "2026-12-21",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "期末套卷三轮①：错题重做限时",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-18:00",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t189",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-22",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t190",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-23",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "错题归类：积分章",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-17:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t191",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-24",
+        "tasks": [
+          {
+            "goal_id": "g3",
+            "title": "唱跳rap：观察位轻练",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-17:00",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t192",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-26",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "期末套卷三轮②：全真模拟",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "14:00-16:00",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t193",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：周末球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "17:00-19:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t194",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c18",
+      "date": "2026-12-21",
+      "task_id": "t189",
+      "note": "三轮①错题限时重做完",
+      "timestamp": "2026-10-25T04:21:56",
+      "makeup": false,
+      "amount": 2.0
+    },
+    {
+      "id": "c19",
+      "date": "2026-12-22",
+      "task_id": "t190",
+      "note": "球局",
+      "timestamp": "2026-10-25T04:21:56",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c20",
+      "date": "2026-12-23",
+      "task_id": "t191",
+      "note": "积分章归类完，错题本全部归档",
+      "timestamp": "2026-10-25T04:21:56",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c21",
+      "date": "2026-12-24",
+      "task_id": "t192",
+      "note": "唱跳轻练一会",
+      "timestamp": "2026-10-25T04:21:56",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c22",
+      "date": "2026-12-26",
+      "task_id": "t193",
+      "note": "全真模拟估分79，三轮收官",
+      "timestamp": "2026-10-25T04:21:56",
+      "makeup": false,
+      "amount": 79.0
+    },
+    {
+      "id": "c23",
+      "date": "2026-12-26",
+      "task_id": "t194",
+      "note": "周末球局",
+      "timestamp": "2026-10-25T04:21:57",
+      "makeup": false,
+      "amount": 1.0
+    }
+  ],
+  "rate": 1.0,
+  "level": "green"
+}

@@ -1,0 +1,207 @@
+{
+  "week_id": "2026-W48",
+  "plan": {
+    "week_id": "2026-W48",
+    "goal_time_alloc": {
+      "g1": 2.0,
+      "g2": 3.0,
+      "g3": 1.5
+    },
+    "days": [
+      {
+        "date": "2026-11-23",
+        "tasks": [
+          {
+            "goal_id": null,
+            "title": "期中后休整：睡到自然醒+整理错题本",
+            "type": "floating",
+            "granularity": "block",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t154",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-24",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "期中错题归档与二刷",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "14:30-16:00",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t155",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-26",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t156",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-28",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：周末球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "17:00-19:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t157",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g3",
+            "title": "唱跳rap：编舞框架启动",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "14:00-15:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t158",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c2",
+      "date": "2026-11-23",
+      "task_id": null,
+      "note": "睡到中午，错题本整理了",
+      "timestamp": "2026-10-25T03:46:27",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c3",
+      "date": "2026-11-24",
+      "task_id": null,
+      "note": "错题归档做完",
+      "timestamp": "2026-10-25T03:46:28",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c4",
+      "date": "2026-11-26",
+      "task_id": null,
+      "note": "球局打了",
+      "timestamp": "2026-10-25T03:46:28",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c5",
+      "date": "2026-11-28",
+      "task_id": null,
+      "note": "周末球局",
+      "timestamp": "2026-10-25T03:46:28",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c6",
+      "date": "2026-11-28",
+      "task_id": null,
+      "note": "编舞框架想好了",
+      "timestamp": "2026-10-25T03:46:28",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c18",
+      "date": "2026-11-23",
+      "task_id": "t154",
+      "note": "睡到中午，错题本整理了",
+      "timestamp": "2026-10-25T03:47:04",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c19",
+      "date": "2026-11-24",
+      "task_id": "t155",
+      "note": "错题归档做完",
+      "timestamp": "2026-10-25T03:47:04",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c20",
+      "date": "2026-11-26",
+      "task_id": "t156",
+      "note": "球局打了",
+      "timestamp": "2026-10-25T03:47:04",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c21",
+      "date": "2026-11-28",
+      "task_id": "t157",
+      "note": "周末球局",
+      "timestamp": "2026-10-25T03:47:04",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c22",
+      "date": "2026-11-28",
+      "task_id": "t158",
+      "note": "编舞框架想好了",
+      "timestamp": "2026-10-25T03:47:05",
+      "makeup": false,
+      "amount": 1.5
+    }
+  ],
+  "rate": 1.0,
+  "level": "green"
+}

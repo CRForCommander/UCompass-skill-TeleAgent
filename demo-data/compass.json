@@ -1,0 +1,506 @@
+{
+  "version": 1,
+  "phase": "archived",
+  "semester": {
+    "id": "2026F",
+    "start": "2026-09-07",
+    "end": "2027-01-17",
+    "exam_weeks": [
+      [
+        "2027-01-04",
+        "2027-01-16"
+      ]
+    ]
+  },
+  "goals": [
+    {
+      "name": "高数翻身",
+      "metric": "期末75+（期中70+为检查点）",
+      "evidence": "教务系统成绩单",
+      "weekly_budget_h": 8,
+      "urgency": "high",
+      "id": "g1",
+      "version": 1,
+      "status": "active",
+      "history": [],
+      "dormant_weeks": 0
+    },
+    {
+      "name": "篮球生活",
+      "metric": "每周2~3次球局，每次2.5小时",
+      "evidence": "操场球局打卡照片",
+      "weekly_budget_h": 6,
+      "urgency": "normal",
+      "id": "g2",
+      "version": 1,
+      "status": "active",
+      "history": [],
+      "dormant_weeks": 0
+    },
+    {
+      "name": "唱跳rap练习",
+      "metric": "本学期完成1支完整作品",
+      "evidence": "录制成片",
+      "weekly_budget_h": 4,
+      "urgency": "low",
+      "id": "g3",
+      "version": 1,
+      "status": "active",
+      "history": [],
+      "dormant_weeks": 0
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "goal_id": "g1",
+      "name": "导数综合题通关",
+      "due": "2026-11-15",
+      "criterion": "综合题正确率≥70%",
+      "status": "achieved",
+      "verified_at": "2026-11-08",
+      "new_due": null,
+      "task_refs": []
+    },
+    {
+      "id": "m2",
+      "goal_id": "g1",
+      "name": "期中考试70+",
+      "due": "2026-11-22",
+      "criterion": "期中卷面成绩",
+      "status": "achieved",
+      "verified_at": "2026-11-22",
+      "new_due": null,
+      "task_refs": []
+    },
+    {
+      "id": "m3",
+      "goal_id": "g1",
+      "name": "期末75+",
+      "due": "2027-01-10",
+      "criterion": "期末卷面成绩",
+      "status": "achieved",
+      "verified_at": "2027-01-09",
+      "new_due": null,
+      "task_refs": []
+    },
+    {
+      "id": "m4",
+      "goal_id": "g2",
+      "name": "稳定三球局节奏满4周",
+      "due": "2026-11-22",
+      "criterion": "连续4周每周≥3次球局",
+      "status": "achieved",
+      "verified_at": "2026-12-13",
+      "new_due": null,
+      "task_refs": []
+    },
+    {
+      "id": "m5",
+      "goal_id": "g3",
+      "name": "选曲定稿",
+      "due": "2026-11-20",
+      "criterion": "确定曲目并完成编舞框架",
+      "status": "achieved",
+      "verified_at": "2026-11-08",
+      "new_due": null,
+      "task_refs": []
+    }
+  ],
+  "weekly_plans": [
+    {
+      "week_id": "2026-W48",
+      "goal_time_alloc": {
+        "g1": 2.0,
+        "g2": 3.0,
+        "g3": 1.5
+      },
+      "days": [
+        {
+          "date": "2026-11-23",
+          "tasks": [
+            {
+              "goal_id": null,
+              "title": "期中后休整：睡到自然醒+整理错题本",
+              "type": "floating",
+              "granularity": "block",
+              "time": null,
+              "quota_standard": 1,
+              "quota_minimum": 0.6,
+              "urgency": "low",
+              "rough": false,
+              "status": "done",
+              "id": "t164",
+              "rollover": 0,
+              "adjustment_log": [],
+              "deadline": null
+            }
+          ]
+        },
+        {
+          "date": "2026-11-24",
+          "tasks": [
+            {
+              "goal_id": "g1",
+              "title": "期中错题归档与二刷",
+              "type": "pinned",
+              "granularity": "block",
+              "time": "14:30-16:00",
+              "quota_standard": 1.5,
+              "quota_minimum": 1.0,
+              "urgency": "normal",
+              "rough": false,
+              "status": "done",
+              "id": "t165",
+              "rollover": 0,
+              "adjustment_log": [],
+              "deadline": null
+            }
+          ]
+        },
+        {
+          "date": "2026-11-26",
+          "tasks": [
+            {
+              "goal_id": "g2",
+              "title": "篮球：操场球局",
+              "type": "pinned",
+              "granularity": "block",
+              "time": "15:50-18:20",
+              "quota_standard": 1,
+              "quota_minimum": 0.6,
+              "urgency": "normal",
+              "rough": false,
+              "status": "done",
+              "id": "t166",
+              "rollover": 0,
+              "adjustment_log": [],
+              "deadline": null
+            }
+          ]
+        },
+        {
+          "date": "2026-11-28",
+          "tasks": [
+            {
+              "goal_id": "g2",
+              "title": "篮球：周末球局",
+              "type": "pinned",
+              "granularity": "block",
+              "time": "17:00-19:30",
+              "quota_standard": 1,
+              "quota_minimum": 0.6,
+              "urgency": "normal",
+              "rough": false,
+              "status": "done",
+              "id": "t167",
+              "rollover": 0,
+              "adjustment_log": [],
+              "deadline": null
+            },
+            {
+              "goal_id": "g3",
+              "title": "唱跳rap：编舞框架启动",
+              "type": "pinned",
+              "granularity": "block",
+              "time": "14:00-15:30",
+              "quota_standard": 1.5,
+              "quota_minimum": 1.0,
+              "urgency": "normal",
+              "rough": false,
+              "status": "done",
+              "id": "t168",
+              "rollover": 0,
+              "adjustment_log": [],
+              "deadline": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week_id": "2026-W50",
+      "goal_time_alloc": {
+        "g1": 6.0,
+        "g2": 3.0,
+        "g3": 0.5
+      },
+      "days": [
+        {
+          "date": "2026-12-07",
+          "tasks": [
+            {
+              "goal_id": "g1",
+              "title": "期末复习规划：章节盘点",
+              "type": "pinned",
+              "granularity": "block",
+              "time": "19:00-20:30",
+              "quota_standard": 1.5,
+              "quota_minimum": 1.0,
+              "urgency": "high",
+              "rough": false,
+              "status": "done",
+              "id": "t175",
+              "rollover": 0,
+              "adjustment_log": [],
+              "deadline": null
+            }
+          ]
+        },
+        {
+          "date": "2026-12-09",
+          "tasks": [
+            {
+              "goal_id": "g1",
+              "title": "积分应用专项（期末重点）",
+              "type": "pinned",
+              "granularity": "block",
+              "time": "19:00-20:30",
+              "quota_standard": 1.5,
+              "quota_minimum": 1.0,
+              "urgency": "high",
+              "rough": false,
+              "status": "done",
+              "id": "t176",
+              "rollover": 0,
+              "adjustment_log": [],
+              "deadline": null
+            }
+          ]
+        },
+        {
+          "date": "2026-12-10",
+          "tasks": [
+            {
+              "goal_id": "g2",
+              "title": "篮球：操场球局",
+              "type": "pinned",
+              "granularity": "block",
+              "time": "15:50-18:20",
+              "quota_standard": 1,
+              "quota_minimum": 0.6,
+              "urgency": "normal",
+              "rough": false,
+              "status": "done",
+              "id": "t177",
+              "rollover": 0,
+              "adjustment_log": [],
+              "deadline": null
+            }
+          ]
+        },
+        {
+          "date": "2026-12-12",
+          "tasks": [
+            {
+              "goal_id": "g1",
+              "title": "期末套卷第一轮：高数",
+              "type": "pinned",
+              "granularity": "block",
+              "time": "14:00-16:00",
+              "quota_standard": 2,
+              "quota_minimum": 1.2,
+              "urgency": "high",
+              "rough": false,
+              "status": "done",
+              "id": "t178",
+              "rollover": 0,
+              "adjustment_log": [],
+              "deadline": null
+            },
+            {
+              "goal_id": "g2",
+              "title": "篮球：周末球局",
+              "type": "pinned",
+              "granularity": "block",
+              "time": "17:00-19:30",
+              "quota_standard": 1,
+              "quota_minimum": 0.6,
+              "urgency": "normal",
+              "rough": false,
+              "status": "done",
+              "id": "t179",
+              "rollover": 0,
+              "adjustment_log": [],
+              "deadline": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "checkins": [
+    {
+      "id": "c1",
+      "date": "2026-10-24",
+      "task_id": null,
+      "note": "学了高数里蔡旭昆函数曲线部分",
+      "timestamp": "2026-10-25T01:17:23",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c14",
+      "date": "2026-11-23",
+      "task_id": "t164",
+      "note": "睡到中午，错题本整理了",
+      "timestamp": "2026-10-25T03:47:21",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c15",
+      "date": "2026-11-24",
+      "task_id": "t165",
+      "note": "错题归档做完",
+      "timestamp": "2026-10-25T03:47:22",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c16",
+      "date": "2026-11-26",
+      "task_id": "t166",
+      "note": "球局打了",
+      "timestamp": "2026-10-25T03:47:22",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c17",
+      "date": "2026-11-28",
+      "task_id": "t167",
+      "note": "周末球局",
+      "timestamp": "2026-10-25T03:47:22",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c18",
+      "date": "2026-11-28",
+      "task_id": "t168",
+      "note": "编舞框架想好了",
+      "timestamp": "2026-10-25T03:47:22",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c25",
+      "date": "2026-12-07",
+      "task_id": "t175",
+      "note": "章节盘点做完，期末有底了",
+      "timestamp": "2026-10-25T03:47:24",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c26",
+      "date": "2026-12-09",
+      "task_id": "t176",
+      "note": "积分应用专项完成",
+      "timestamp": "2026-10-25T03:47:24",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c27",
+      "date": "2026-12-10",
+      "task_id": "t177",
+      "note": "球局",
+      "timestamp": "2026-10-25T03:47:24",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c28",
+      "date": "2026-12-12",
+      "task_id": "t178",
+      "note": "期末套卷第一轮做完估分76",
+      "timestamp": "2026-10-25T03:47:24",
+      "makeup": false,
+      "amount": 76.0
+    },
+    {
+      "id": "c29",
+      "date": "2026-12-12",
+      "task_id": "t179",
+      "note": "周末球局",
+      "timestamp": "2026-10-25T03:47:25",
+      "makeup": false,
+      "amount": 1.0
+    }
+  ],
+  "stats": {
+    "streak_days": 49,
+    "last_encourage_idx": 2,
+    "recent_quotes": [],
+    "weekly_rates": [
+      {
+        "week_id": "2026-W44",
+        "rate": 0.93,
+        "level": "green"
+      },
+      {
+        "week_id": "2026-W45",
+        "rate": 0.96,
+        "level": "green"
+      },
+      {
+        "week_id": "2026-W46",
+        "rate": 0.92,
+        "level": "green"
+      },
+      {
+        "week_id": "2026-W47",
+        "rate": 1.0,
+        "level": "green"
+      },
+      {
+        "week_id": "2026-W48",
+        "rate": 1.0,
+        "level": "green"
+      },
+      {
+        "week_id": "2026-W50",
+        "rate": 1.0,
+        "level": "green"
+      },
+      {
+        "week_id": "2026-W49",
+        "rate": 1.0,
+        "level": "green"
+      },
+      {
+        "week_id": "2027-W02",
+        "rate": 1.0,
+        "level": "green"
+      },
+      {
+        "week_id": "2026-W51",
+        "rate": 1.0,
+        "level": "green"
+      },
+      {
+        "week_id": "2026-W52",
+        "rate": 1.0,
+        "level": "green"
+      },
+      {
+        "week_id": "2026-W53",
+        "rate": 1.0,
+        "level": "green"
+      },
+      {
+        "week_id": "2027-W01",
+        "rate": 1.0,
+        "level": "green"
+      }
+    ],
+    "borrow_log": [],
+    "last_streak_date": "2027-01-09",
+    "pending_rollover": {
+      "g1": 3.0
+    }
+  },
+  "_seq": 206
+}

@@ -1,0 +1,167 @@
+{
+  "week_id": "2027-W01",
+  "plan": {
+    "week_id": "2027-W01",
+    "goal_time_alloc": {
+      "g1": 4.0,
+      "g2": 1.0,
+      "g3": 0
+    },
+    "days": [
+      {
+        "date": "2027-01-04",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "公式卡总复习",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-17:00",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t201",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2027-01-05",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "错题速览+轻复习",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:00-16:00",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t202",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2027-01-06",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "高数期末考试",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "09:00-11:00",
+            "quota_standard": 2,
+            "quota_minimum": 1.5,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t203",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2027-01-08",
+        "tasks": [
+          {
+            "goal_id": null,
+            "title": "考后休整：游戏充电",
+            "type": "floating",
+            "granularity": "block",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.5,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t204",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2027-01-09",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：考完放松球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t205",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c30",
+      "date": "2027-01-04",
+      "task_id": "t201",
+      "note": "公式卡全过一遍",
+      "timestamp": "2026-10-25T04:21:58",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c31",
+      "date": "2027-01-05",
+      "task_id": "t202",
+      "note": "错题速览完，今晚早睡",
+      "timestamp": "2026-10-25T04:21:58",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c32",
+      "date": "2027-01-06",
+      "task_id": "t203",
+      "note": "考完了！压轴题做出来了，感觉稳了",
+      "timestamp": "2026-10-25T04:21:58",
+      "makeup": false,
+      "amount": 2.0
+    },
+    {
+      "id": "c33",
+      "date": "2027-01-08",
+      "task_id": "t204",
+      "note": "考后休息日，游戏充电",
+      "timestamp": "2026-10-25T04:21:59",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c34",
+      "date": "2027-01-09",
+      "task_id": "t205",
+      "note": "放松球局打完，成绩出了：78分！",
+      "timestamp": "2026-10-25T04:21:59",
+      "makeup": false,
+      "amount": 78.0
+    }
+  ],
+  "rate": 1.0,
+  "level": "green"
+}

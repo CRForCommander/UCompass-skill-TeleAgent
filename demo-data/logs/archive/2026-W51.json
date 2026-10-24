@@ -1,0 +1,192 @@
+{
+  "week_id": "2026-W51",
+  "plan": {
+    "week_id": "2026-W51",
+    "goal_time_alloc": {
+      "g1": 6.0,
+      "g2": 3.0,
+      "g3": 1.0
+    },
+    "days": [
+      {
+        "date": "2026-12-14",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "期末套卷二轮①：2023年卷限时",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-18:00",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t183",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-15",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t184",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-16",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "错题归类：极限与导数章",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-17:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t185",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-17",
+        "tasks": [
+          {
+            "goal_id": "g3",
+            "title": "唱跳rap：观察位轻练",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-17:00",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t186",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-19",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "期末套卷二轮②：2024年卷限时",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "14:00-16:00",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t187",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：周末球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "17:00-19:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t188",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c12",
+      "date": "2026-12-14",
+      "task_id": "t183",
+      "note": "套卷二轮①限时做完，估分77",
+      "timestamp": "2026-10-25T04:21:54",
+      "makeup": false,
+      "amount": 77.0
+    },
+    {
+      "id": "c13",
+      "date": "2026-12-15",
+      "task_id": "t184",
+      "note": "球局打了",
+      "timestamp": "2026-10-25T04:21:55",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c14",
+      "date": "2026-12-16",
+      "task_id": "t185",
+      "note": "极限和导数两章错题归类完",
+      "timestamp": "2026-10-25T04:21:55",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c15",
+      "date": "2026-12-17",
+      "task_id": "t186",
+      "note": "副歌跟了一遍，期末月保持手感",
+      "timestamp": "2026-10-25T04:21:55",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c16",
+      "date": "2026-12-19",
+      "task_id": "t187",
+      "note": "套卷二轮②估分78，比上回稳",
+      "timestamp": "2026-10-25T04:21:55",
+      "makeup": false,
+      "amount": 78.0
+    },
+    {
+      "id": "c17",
+      "date": "2026-12-19",
+      "task_id": "t188",
+      "note": "周末球局",
+      "timestamp": "2026-10-25T04:21:55",
+      "makeup": false,
+      "amount": 1.0
+    }
+  ],
+  "rate": 1.0,
+  "level": "green"
+}

@@ -1,0 +1,377 @@
+{
+  "week_id": "2026-W46",
+  "plan": {
+    "week_id": "2026-W46",
+    "goal_time_alloc": {
+      "g1": 10.0,
+      "g2": 4.0,
+      "g3": 1.0
+    },
+    "days": [
+      {
+        "date": "2026-11-09",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "高数：导数应用综合题 4 道",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "19:00-21:00",
+            "quota_standard": 4,
+            "quota_minimum": 2.5,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t141",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g1",
+            "title": "期中套卷①（前半卷）",
+            "type": "deadline",
+            "granularity": "block",
+            "time": "09:40-11:10",
+            "deadline": "2026-11-12",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t142",
+            "rollover": 0,
+            "adjustment_log": []
+          }
+        ]
+      },
+      {
+        "date": "2026-11-10",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "14:00-16:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t143",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g1",
+            "title": "期中套卷①（后半卷）",
+            "type": "deadline",
+            "granularity": "block",
+            "time": "19:00-20:30",
+            "deadline": "2026-11-12",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t144",
+            "rollover": 0,
+            "adjustment_log": []
+          }
+        ]
+      },
+      {
+        "date": "2026-11-11",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "套卷①错题复盘",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-17:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "high",
+            "rough": false,
+            "status": "missed",
+            "id": "t145",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-12",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "期中套卷②（完整限时）",
+            "type": "deadline",
+            "granularity": "block",
+            "time": "08:30-10:30",
+            "deadline": "2026-11-15",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t146",
+            "rollover": 0,
+            "adjustment_log": []
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t147",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-13",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "套卷②薄弱点专项：中值定理",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "19:00-20:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t148",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": null,
+            "title": "周五晚自由",
+            "type": "floating",
+            "granularity": "block",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t149",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-14",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "期中公式卡总复习",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:00-16:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t150",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：周末球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "17:00-19:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t151",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-15",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "考前轻量回顾（公式卡+错题索引）",
+            "type": "floating",
+            "granularity": "fragment",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t152",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": null,
+            "title": "周日休整",
+            "type": "floating",
+            "granularity": "block",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t153",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c2",
+      "date": "2026-11-09",
+      "task_id": "t141",
+      "note": "综合题做完了4道",
+      "timestamp": "2026-10-25T03:22:32",
+      "makeup": false,
+      "amount": 4.0
+    },
+    {
+      "id": "c3",
+      "date": "2026-11-09",
+      "task_id": "t142",
+      "note": "套卷前半做完了",
+      "timestamp": "2026-10-25T03:22:32",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c4",
+      "date": "2026-11-10",
+      "task_id": "t143",
+      "note": "打球了",
+      "timestamp": "2026-10-25T03:22:32",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c5",
+      "date": "2026-11-10",
+      "task_id": "t144",
+      "note": "后半卷做完",
+      "timestamp": "2026-10-25T03:22:33",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c6",
+      "date": "2026-11-12",
+      "task_id": "t146",
+      "note": "套卷②限时做完了，估分78",
+      "timestamp": "2026-10-25T03:22:33",
+      "makeup": false,
+      "amount": 78.0
+    },
+    {
+      "id": "c7",
+      "date": "2026-11-12",
+      "task_id": "t147",
+      "note": "球局打卡",
+      "timestamp": "2026-10-25T03:22:33",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c8",
+      "date": "2026-11-13",
+      "task_id": "t148",
+      "note": "中值定理专项做完",
+      "timestamp": "2026-10-25T03:22:33",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c9",
+      "date": "2026-11-14",
+      "task_id": "t150",
+      "note": "公式卡过完了",
+      "timestamp": "2026-10-25T03:22:33",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c10",
+      "date": "2026-11-14",
+      "task_id": "t151",
+      "note": "周末球局，考前放松",
+      "timestamp": "2026-10-25T03:22:34",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c11",
+      "date": "2026-11-15",
+      "task_id": "t152",
+      "note": "错题索引看完了",
+      "timestamp": "2026-10-25T03:22:34",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c12",
+      "date": "2026-11-11",
+      "task_id": "t145",
+      "note": "没做，那天熬夜了",
+      "timestamp": "2026-10-25T03:22:47",
+      "makeup": true,
+      "amount": 0.0
+    },
+    {
+      "id": "c13",
+      "date": "2026-11-13",
+      "task_id": "t149",
+      "note": "看了场电影",
+      "timestamp": "2026-10-25T03:22:47",
+      "makeup": true,
+      "amount": 1.0
+    },
+    {
+      "id": "c14",
+      "date": "2026-11-15",
+      "task_id": "t153",
+      "note": "休整了",
+      "timestamp": "2026-10-25T03:22:47",
+      "makeup": true,
+      "amount": 1.0
+    }
+  ],
+  "rate": 0.92,
+  "level": "green"
+}

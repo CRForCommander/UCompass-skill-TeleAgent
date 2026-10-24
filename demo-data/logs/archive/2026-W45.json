@@ -1,0 +1,510 @@
+{
+  "week_id": "2026-W45",
+  "plan": {
+    "week_id": "2026-W45",
+    "goal_time_alloc": {
+      "g1": 8.5,
+      "g2": 5.0,
+      "g3": 3.0
+    },
+    "days": [
+      {
+        "date": "2026-11-02",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "高数：简单复合函数求导 3 道（台阶①）",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "19:00-20:30",
+            "quota_standard": 3,
+            "quota_minimum": 2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t127",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g1",
+            "title": "导数应用：单调性与极值预习",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "09:40-11:10",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t128",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-03",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "14:00-16:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t129",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g1",
+            "title": "高数：中等复合求导 5 道（台阶②）",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "09:40-11:10",
+            "quota_standard": 5,
+            "quota_minimum": 3,
+            "urgency": "high",
+            "rough": false,
+            "status": "partial",
+            "id": "t130",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-04",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "高数：导数应用题专项（单调性）",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "08:30-10:00",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t131",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g1",
+            "title": "上周欠账吸收：导数计算 +1h",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-17:00",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t132",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-05",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "高数：中等复合求导 5 道（台阶②续）",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "08:30-10:00",
+            "quota_standard": 5,
+            "quota_minimum": 3,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t133",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t134",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-06",
+        "tasks": [
+          {
+            "goal_id": "g3",
+            "title": "唱跳rap：选曲试听与对比",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "19:00-20:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t135",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": null,
+            "title": "周五晚自由：游戏/社交",
+            "type": "floating",
+            "granularity": "block",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t136",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-07",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "高数周复盘：本周错题二刷",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:00-16:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t137",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：周末球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "17:00-19:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t138",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-08",
+        "tasks": [
+          {
+            "goal_id": "g3",
+            "title": "唱跳rap：选曲定稿（里程碑）",
+            "type": "deadline",
+            "granularity": "block",
+            "time": "14:00-15:30",
+            "deadline": "2026-11-08",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t139",
+            "rollover": 0,
+            "adjustment_log": []
+          },
+          {
+            "goal_id": null,
+            "title": "周日休整",
+            "type": "floating",
+            "granularity": "block",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t140",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c2",
+      "date": "2026-11-02",
+      "task_id": null,
+      "note": "台阶3道做完了",
+      "timestamp": "2026-10-25T03:06:31",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c3",
+      "date": "2026-11-02",
+      "task_id": null,
+      "note": "预习完了",
+      "timestamp": "2026-10-25T03:06:31",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c4",
+      "date": "2026-11-03",
+      "task_id": null,
+      "note": "打球了，今天状态好",
+      "timestamp": "2026-10-25T03:06:31",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c5",
+      "date": "2026-11-03",
+      "task_id": null,
+      "note": "中等复合做了3道，剩下太难",
+      "timestamp": "2026-10-25T03:06:31",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c6",
+      "date": "2026-11-04",
+      "task_id": null,
+      "note": "导数应用专项做完",
+      "timestamp": "2026-10-25T03:06:31",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c7",
+      "date": "2026-11-04",
+      "task_id": null,
+      "note": "欠账补完了",
+      "timestamp": "2026-10-25T03:06:32",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c8",
+      "date": "2026-11-05",
+      "task_id": null,
+      "note": "台阶②剩下的做完了",
+      "timestamp": "2026-10-25T03:06:32",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c9",
+      "date": "2026-11-05",
+      "task_id": null,
+      "note": "球局打卡",
+      "timestamp": "2026-10-25T03:06:32",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c10",
+      "date": "2026-11-06",
+      "task_id": null,
+      "note": "听了5首歌，选了2首备选",
+      "timestamp": "2026-10-25T03:06:32",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c11",
+      "date": "2026-11-07",
+      "task_id": null,
+      "note": "错题二刷完成",
+      "timestamp": "2026-10-25T03:06:32",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c12",
+      "date": "2026-11-07",
+      "task_id": null,
+      "note": "周末球局痛快",
+      "timestamp": "2026-10-25T03:06:33",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c13",
+      "date": "2026-11-08",
+      "task_id": null,
+      "note": "选曲定稿了！就选那首",
+      "timestamp": "2026-10-25T03:06:33",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c14",
+      "date": "2026-11-02",
+      "task_id": "t127",
+      "note": "台阶3道做完了",
+      "timestamp": "2026-10-25T03:06:46",
+      "makeup": false,
+      "amount": 3.0
+    },
+    {
+      "id": "c15",
+      "date": "2026-11-02",
+      "task_id": "t128",
+      "note": "预习完了",
+      "timestamp": "2026-10-25T03:06:46",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c16",
+      "date": "2026-11-03",
+      "task_id": "t129",
+      "note": "打球了，今天状态好",
+      "timestamp": "2026-10-25T03:06:46",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c17",
+      "date": "2026-11-03",
+      "task_id": "t130",
+      "note": "中等复合做了3道，剩下太难",
+      "timestamp": "2026-10-25T03:06:46",
+      "makeup": false,
+      "amount": 3.0
+    },
+    {
+      "id": "c18",
+      "date": "2026-11-04",
+      "task_id": "t131",
+      "note": "导数应用专项做完",
+      "timestamp": "2026-10-25T03:06:47",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c19",
+      "date": "2026-11-04",
+      "task_id": "t132",
+      "note": "欠账补完了",
+      "timestamp": "2026-10-25T03:06:47",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c20",
+      "date": "2026-11-05",
+      "task_id": "t133",
+      "note": "台阶②剩下的做完了",
+      "timestamp": "2026-10-25T03:06:47",
+      "makeup": false,
+      "amount": 5.0
+    },
+    {
+      "id": "c21",
+      "date": "2026-11-05",
+      "task_id": "t134",
+      "note": "球局打卡",
+      "timestamp": "2026-10-25T03:06:47",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c22",
+      "date": "2026-11-06",
+      "task_id": "t135",
+      "note": "听了5首歌，选了2首备选",
+      "timestamp": "2026-10-25T03:06:47",
+      "makeup": false,
+      "amount": 5.0
+    },
+    {
+      "id": "c23",
+      "date": "2026-11-07",
+      "task_id": "t137",
+      "note": "错题二刷完成",
+      "timestamp": "2026-10-25T03:06:47",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c24",
+      "date": "2026-11-07",
+      "task_id": "t138",
+      "note": "周末球局痛快",
+      "timestamp": "2026-10-25T03:06:48",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c25",
+      "date": "2026-11-08",
+      "task_id": "t139",
+      "note": "选曲定稿了！就选那首",
+      "timestamp": "2026-10-25T03:06:48",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c26",
+      "date": "2026-11-06",
+      "task_id": "t136",
+      "note": "和室友开黑了两把",
+      "timestamp": "2026-10-25T03:06:59",
+      "makeup": true,
+      "amount": 1.0
+    },
+    {
+      "id": "c27",
+      "date": "2026-11-08",
+      "task_id": "t140",
+      "note": "睡到中午，下午整理了下房间",
+      "timestamp": "2026-10-25T03:07:00",
+      "makeup": true,
+      "amount": 1.0
+    }
+  ],
+  "rate": 0.96,
+  "level": "green"
+}

@@ -1,0 +1,300 @@
+{
+  "week_id": "2026-W49",
+  "plan": {
+    "week_id": "2026-W49",
+    "goal_time_alloc": {
+      "g1": 5.0,
+      "g2": 3.0,
+      "g3": 2.0
+    },
+    "days": [
+      {
+        "date": "2026-11-30",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "高数新课：积分基础预习",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "19:00-20:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t169",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-01",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t170",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-03",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "积分计算专项 6 道",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-17:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t171",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-04",
+        "tasks": [
+          {
+            "goal_id": "g3",
+            "title": "唱跳rap：副歌段落练习",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "19:00-20:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t172",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-05",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "周复盘：错题二刷",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "14:00-15:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t173",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：周末球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "17:00-19:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t174",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c7",
+      "date": "2026-11-30",
+      "task_id": null,
+      "note": "积分预习完了",
+      "timestamp": "2026-10-25T03:46:28",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c8",
+      "date": "2026-12-01",
+      "task_id": null,
+      "note": "打球了",
+      "timestamp": "2026-10-25T03:46:29",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c9",
+      "date": "2026-12-03",
+      "task_id": null,
+      "note": "积分6道做完",
+      "timestamp": "2026-10-25T03:46:29",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c10",
+      "date": "2026-12-04",
+      "task_id": null,
+      "note": "副歌练熟了",
+      "timestamp": "2026-10-25T03:46:29",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c11",
+      "date": "2026-12-05",
+      "task_id": null,
+      "note": "错题二刷完成",
+      "timestamp": "2026-10-25T03:46:29",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c12",
+      "date": "2026-12-05",
+      "task_id": null,
+      "note": "周末球局打卡",
+      "timestamp": "2026-10-25T03:46:29",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c23",
+      "date": "2026-11-30",
+      "task_id": null,
+      "note": "积分预习完了",
+      "timestamp": "2026-10-25T03:47:05",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c24",
+      "date": "2026-12-01",
+      "task_id": null,
+      "note": "打球了",
+      "timestamp": "2026-10-25T03:47:05",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c25",
+      "date": "2026-12-03",
+      "task_id": null,
+      "note": "积分6道做完",
+      "timestamp": "2026-10-25T03:47:05",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c26",
+      "date": "2026-12-04",
+      "task_id": null,
+      "note": "副歌练熟了",
+      "timestamp": "2026-10-25T03:47:05",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c27",
+      "date": "2026-12-05",
+      "task_id": null,
+      "note": "错题二刷完成",
+      "timestamp": "2026-10-25T03:47:05",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c28",
+      "date": "2026-12-05",
+      "task_id": null,
+      "note": "周末球局打卡",
+      "timestamp": "2026-10-25T03:47:06",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c19",
+      "date": "2026-11-30",
+      "task_id": "t169",
+      "note": "积分预习完了",
+      "timestamp": "2026-10-25T03:47:22",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c20",
+      "date": "2026-12-01",
+      "task_id": "t170",
+      "note": "打球了",
+      "timestamp": "2026-10-25T03:47:23",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c21",
+      "date": "2026-12-03",
+      "task_id": "t171",
+      "note": "积分6道做完",
+      "timestamp": "2026-10-25T03:47:23",
+      "makeup": false,
+      "amount": 6.0
+    },
+    {
+      "id": "c22",
+      "date": "2026-12-04",
+      "task_id": "t172",
+      "note": "副歌练熟了",
+      "timestamp": "2026-10-25T03:47:23",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c23",
+      "date": "2026-12-05",
+      "task_id": "t173",
+      "note": "错题二刷完成",
+      "timestamp": "2026-10-25T03:47:23",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c24",
+      "date": "2026-12-05",
+      "task_id": "t174",
+      "note": "周末球局打卡",
+      "timestamp": "2026-10-25T03:47:23",
+      "makeup": false,
+      "amount": 1.0
+    }
+  ],
+  "rate": 1.0,
+  "level": "green"
+}

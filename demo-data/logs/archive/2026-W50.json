@@ -1,0 +1,207 @@
+{
+  "week_id": "2026-W50",
+  "plan": {
+    "week_id": "2026-W50",
+    "goal_time_alloc": {
+      "g1": 6.0,
+      "g2": 3.0,
+      "g3": 0.5
+    },
+    "days": [
+      {
+        "date": "2026-12-07",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "期末复习规划：章节盘点",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "19:00-20:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t159",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-09",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "积分应用专项（期末重点）",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "19:00-20:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t160",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-10",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t161",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-12",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "期末套卷第一轮：高数",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "14:00-16:00",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t162",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：周末球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "17:00-19:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t163",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c13",
+      "date": "2026-12-07",
+      "task_id": null,
+      "note": "章节盘点做完，期末有底了",
+      "timestamp": "2026-10-25T03:46:30",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c14",
+      "date": "2026-12-09",
+      "task_id": null,
+      "note": "积分应用专项完成",
+      "timestamp": "2026-10-25T03:46:30",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c15",
+      "date": "2026-12-10",
+      "task_id": null,
+      "note": "球局",
+      "timestamp": "2026-10-25T03:46:30",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c16",
+      "date": "2026-12-12",
+      "task_id": null,
+      "note": "期末套卷第一轮做完估分76",
+      "timestamp": "2026-10-25T03:46:30",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c17",
+      "date": "2026-12-12",
+      "task_id": null,
+      "note": "周末球局",
+      "timestamp": "2026-10-25T03:46:30",
+      "makeup": false,
+      "amount": null
+    },
+    {
+      "id": "c29",
+      "date": "2026-12-07",
+      "task_id": "t159",
+      "note": "章节盘点做完，期末有底了",
+      "timestamp": "2026-10-25T03:47:06",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c30",
+      "date": "2026-12-09",
+      "task_id": "t160",
+      "note": "积分应用专项完成",
+      "timestamp": "2026-10-25T03:47:06",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c31",
+      "date": "2026-12-10",
+      "task_id": "t161",
+      "note": "球局",
+      "timestamp": "2026-10-25T03:47:06",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c32",
+      "date": "2026-12-12",
+      "task_id": "t162",
+      "note": "期末套卷第一轮做完估分76",
+      "timestamp": "2026-10-25T03:47:06",
+      "makeup": false,
+      "amount": 76.0
+    },
+    {
+      "id": "c33",
+      "date": "2026-12-12",
+      "task_id": "t163",
+      "note": "周末球局",
+      "timestamp": "2026-10-25T03:47:07",
+      "makeup": false,
+      "amount": 1.0
+    }
+  ],
+  "rate": 1.0,
+  "level": "green"
+}

@@ -1,0 +1,192 @@
+{
+  "week_id": "2026-W53",
+  "plan": {
+    "week_id": "2026-W53",
+    "goal_time_alloc": {
+      "g1": 5.0,
+      "g2": 3.0,
+      "g3": 0
+    },
+    "days": [
+      {
+        "date": "2026-12-28",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "错题回归：第一章重做",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-17:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1.0,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t195",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-30",
+        "tasks": [
+          {
+            "goal_id": null,
+            "title": "元旦自由日：睡到自然醒",
+            "type": "floating",
+            "granularity": "block",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.5,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t196",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-12-31",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t197",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2027-01-02",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "错题回归：第二三章重做",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "14:00-16:00",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t198",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：周末球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "17:00-19:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t199",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2027-01-03",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "假期收心：公式卡预热",
+            "type": "floating",
+            "granularity": "block",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.5,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t200",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c24",
+      "date": "2026-12-28",
+      "task_id": "t195",
+      "note": "第一章错题重做完",
+      "timestamp": "2026-10-25T04:21:57",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c25",
+      "date": "2026-12-30",
+      "task_id": "t196",
+      "note": "元旦自由日，睡到中午",
+      "timestamp": "2026-10-25T04:21:57",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c26",
+      "date": "2026-12-31",
+      "task_id": "t197",
+      "note": "球局跨年场",
+      "timestamp": "2026-10-25T04:21:57",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c27",
+      "date": "2027-01-02",
+      "task_id": "t198",
+      "note": "第二三章重做完，错题本清零",
+      "timestamp": "2026-10-25T04:21:57",
+      "makeup": false,
+      "amount": 2.0
+    },
+    {
+      "id": "c28",
+      "date": "2027-01-02",
+      "task_id": "t199",
+      "note": "周末球局",
+      "timestamp": "2026-10-25T04:21:58",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c29",
+      "date": "2027-01-03",
+      "task_id": "t200",
+      "note": "假期收心，公式卡过了一遍",
+      "timestamp": "2026-10-25T04:21:58",
+      "makeup": false,
+      "amount": 1.0
+    }
+  ],
+  "rate": 1.0,
+  "level": "green"
+}

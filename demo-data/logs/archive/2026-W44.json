@@ -1,0 +1,402 @@
+{
+  "week_id": "2026-W44",
+  "plan": {
+    "week_id": "2026-W44",
+    "goal_time_alloc": {
+      "g1": 8.0,
+      "g2": 5.0,
+      "g3": 1.5
+    },
+    "days": [
+      {
+        "date": "2026-10-26",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "高数地基修复：函数与极限重学",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "19:00-21:00",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t113",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g1",
+            "title": "高数地基修复：配套基础题12道",
+            "type": "floating",
+            "granularity": "fragment",
+            "time": null,
+            "quota_standard": 12,
+            "quota_minimum": 7,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t114",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-10-27",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：约同学操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "14:00-16:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t115",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g1",
+            "title": "高数地基修复：极限计算专项练习",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "09:40-11:40",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t116",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "高数地基修复：导数定义与几何意义",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "08:30-10:30",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t117",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g1",
+            "title": "高数地基修复：导数计算练习",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "16:00-17:30",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "missed",
+            "id": "t118",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-10-29",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "高数地基修复：求导法则专项（链式法则）",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "08:30-10:30",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t119",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：约同学操场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t120",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-10-30",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "周日考试针对性复习：错题与薄弱章节",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "10:00-12:00",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t121",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": null,
+            "title": "周五晚聚餐：同学社交（记入劳娱安排）",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "18:00-21:00",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t122",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "周日考试针对性复习：模拟题自测+错题回看",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "09:00-11:30",
+            "quota_standard": 2.5,
+            "quota_minimum": 1.5,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t123",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          },
+          {
+            "goal_id": "g1",
+            "title": "考前轻量回顾：公式卡+易错点浏览（不学新内容）",
+            "type": "floating",
+            "granularity": "fragment",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t124",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "周日10:00考试（高数周测）",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "09:30-11:00",
+            "deadline": "2026-11-01",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t125",
+            "rollover": 0,
+            "adjustment_log": []
+          },
+          {
+            "goal_id": "g2",
+            "title": "篮球：考后放松球局（考完就去，奖励设计）",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:00-17:30",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t126",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c2",
+      "date": "2026-10-26",
+      "task_id": "t113",
+      "note": "学了高数里蔡旭昆函数曲线部分",
+      "timestamp": "2026-10-25T01:18:01",
+      "makeup": false,
+      "amount": 2.0
+    },
+    {
+      "id": "c3",
+      "date": "2026-10-26",
+      "task_id": "t114",
+      "note": "完成了！",
+      "timestamp": "2026-10-25T01:20:09",
+      "makeup": false,
+      "amount": 12.0
+    },
+    {
+      "id": "c4",
+      "date": "2026-10-27",
+      "task_id": "t116",
+      "note": "极限计算做完了",
+      "timestamp": "2026-10-25T01:22:03",
+      "makeup": false,
+      "amount": 2.0
+    },
+    {
+      "id": "c5",
+      "date": "2026-10-27",
+      "task_id": "t115",
+      "note": "打卡：今天打球了，2.5小时",
+      "timestamp": "2026-10-25T01:22:03",
+      "makeup": false,
+      "amount": 2.5
+    },
+    {
+      "id": "c6",
+      "date": "2026-10-28",
+      "task_id": "t117",
+      "note": "导数定义学完了",
+      "timestamp": "2026-10-25T01:22:03",
+      "makeup": false,
+      "amount": 2.0
+    },
+    {
+      "id": "c7",
+      "date": "2026-10-28",
+      "task_id": "t118",
+      "note": "导数计算只做了一半，后面的太难了",
+      "timestamp": "2026-10-25T01:22:03",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c8",
+      "date": "2026-10-29",
+      "task_id": "t119",
+      "note": "链式法则搞定了",
+      "timestamp": "2026-10-25T01:22:03",
+      "makeup": false,
+      "amount": 2.0
+    },
+    {
+      "id": "c9",
+      "date": "2026-10-29",
+      "task_id": "t120",
+      "note": "球局打卡，今天手感不错",
+      "timestamp": "2026-10-25T01:22:04",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c10",
+      "date": "2026-10-30",
+      "task_id": "t121",
+      "note": "复习完了，错题过了一轮",
+      "timestamp": "2026-10-25T01:22:04",
+      "makeup": false,
+      "amount": 2.0
+    },
+    {
+      "id": "c11",
+      "date": "2026-10-30",
+      "task_id": "t122",
+      "note": "聚餐很尽兴",
+      "timestamp": "2026-10-25T01:22:04",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c12",
+      "date": "2026-10-31",
+      "task_id": "t123",
+      "note": "模拟自测做完了，感觉还行",
+      "timestamp": "2026-10-25T01:22:04",
+      "makeup": false,
+      "amount": 2.5
+    },
+    {
+      "id": "c13",
+      "date": "2026-10-31",
+      "task_id": "t124",
+      "note": "公式卡看完了",
+      "timestamp": "2026-10-25T01:22:04",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c14",
+      "date": "2026-11-01",
+      "task_id": "t125",
+      "note": "考完了！感觉比之前好多了",
+      "timestamp": "2026-10-25T01:22:05",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c15",
+      "date": "2026-11-01",
+      "task_id": "t126",
+      "note": "考完打球，痛快！",
+      "timestamp": "2026-10-25T01:22:05",
+      "makeup": false,
+      "amount": 1.0
+    }
+  ],
+  "rate": 0.93,
+  "level": "green"
+}

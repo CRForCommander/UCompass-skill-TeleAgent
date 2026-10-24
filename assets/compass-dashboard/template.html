@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你的司南 UCompass · 航海仪表盘</title>
+<style>
+  :root{
+    --blue:#3b82f6; --blue-deep:#1d4ed8; --blue-bg:#eff6ff; --blue-line:#bfdbfe;
+    --ink:#1e293b; --ink-2:#475569; --ink-3:#94a3b8;
+    --green:#10b981; --green-bg:#ecfdf5; --amber:#f59e0b; --amber-bg:#fffbeb;
+    --red:#ef4444; --red-bg:#fef2f2; --gray:#e2e8f0; --card:#ffffff;
+    --radius:14px; --shadow:0 1px 3px rgba(30,41,59,.08),0 4px 16px rgba(30,41,59,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif;
+       background:linear-gradient(180deg,#f0f7ff 0%,#f8fafc 240px);color:var(--ink);
+       min-height:100vh;padding:28px 20px 60px}
+  .wrap{max-width:1180px;margin:0 auto}
+  header.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+  .logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));
+        display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+  .logo svg{width:26px;height:26px;stroke:#fff}
+  h1{font-size:22px;letter-spacing:.5px}
+  h1 small{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
+  .top-meta{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+  .pill{background:var(--card);border:1px solid var(--blue-line);border-radius:999px;
+        padding:5px 14px;font-size:12px;color:var(--ink-2);box-shadow:var(--shadow)}
+  .pill b{color:var(--blue-deep)}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+        padding:18px 20px;border:1px solid rgba(191,219,254,.45)}
+  .card h2{font-size:15px;display:flex;align-items:center;gap:8px;margin-bottom:14px;color:var(--ink)}
+  .card h2 svg{width:17px;height:17px;stroke:var(--blue)}
+  .card h2 .sub{margin-left:auto;font-size:11px;color:var(--ink-3);font-weight:400}
+  .c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}
+  .c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}
+  .c12{grid-column:span 12}
+  @media(max-width:900px){.c3,.c4,.c5,.c6,.c7,.c8{grid-column:span 12}}
+
+  /* ① 罗盘总览 */
+  .compass-row{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .ring{position:relative;width:150px;height:150px;flex:none}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .val b{font-size:26px;color:var(--blue-deep)}
+  .ring .val span{font-size:11px;color:var(--ink-3)}
+  .stat-list{flex:1;min-width:220px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stat{background:var(--blue-bg);border-radius:10px;padding:10px 14px}
+  .stat .k{font-size:11px;color:var(--ink-3)}
+  .stat .v{font-size:19px;font-weight:600;color:var(--ink);margin-top:2px}
+  .stat .v small{font-size:11px;color:var(--ink-3);font-weight:400}
+  .goal-health{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+  .gh-row{display:flex;align-items:center;gap:10px;font-size:12.5px}
+  .gh-name{width:130px;flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .gh-bar{flex:1;height:8px;background:var(--gray);border-radius:99px;overflow:hidden;position:relative}
+  .gh-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--green))}
+  .gh-bar.none i{background:repeating-linear-gradient(45deg,#e2e8f0 0 6px,#cbd5e1 6px 12px)}
+  .gh-pct{width:60px;text-align:right;color:var(--ink-2);flex:none}
+  .gh-pct.na{color:var(--ink-3);font-size:10.5px}
+  .gh-hint{font-size:10px;color:var(--ink-3);margin:-4px 0 8px 140px;display:flex;align-items:center;gap:4px}
+  .gh-hint svg{width:11px;height:11px;stroke:var(--ink-3);flex:none}
+  .tag{font-size:10px;padding:1px 7px;border-radius:99px;flex:none}
+  .tag.high{background:var(--red-bg);color:var(--red)}
+  .tag.normal{background:var(--blue-bg);color:var(--blue-deep)}
+  .tag.low{background:#f1f5f9;color:var(--ink-3)}
+  .tag.dormant{background:var(--amber-bg);color:var(--amber)}
+
+  /* ② 航程时间轴（dot 钉真实日期 + 文字上下交替 + 同侧碰撞整体推开） */
+  .tl-scroll{overflow-x:auto;padding:6px 2px 10px}
+  .tl{position:relative;min-width:760px;height:150px}
+  .tl .axis{position:absolute;left:14px;right:14px;top:74px;height:3px;
+            background:linear-gradient(90deg,var(--blue-line),var(--blue));border-radius:99px}
+  .tl .nowline{position:absolute;top:54px;width:2px;height:44px;background:var(--red);border-radius:2px}
+  .tl .nowline:after{content:"今天";position:absolute;top:-17px;left:-12px;font-size:10px;color:var(--red);white-space:nowrap}
+  .node{position:absolute;width:170px;transform:translateX(-50%);text-align:center}
+  .node.above{top:0;height:82px;display:flex;flex-direction:column;justify-content:flex-end}
+  .node.below{top:68px}
+  .node .dot{width:14px;height:14px;border-radius:50%;border:3px solid #fff;flex:none;
+             box-shadow:0 0 0 2px var(--blue-line);margin:0 auto}
+  .node.achieved .dot{background:var(--green);box-shadow:0 0 0 2px #a7f3d0}
+  .node.in_progress .dot{background:var(--blue);box-shadow:0 0 0 2px var(--blue-line);animation:pulse 2s infinite}
+  .node.delayed .dot{background:var(--amber);box-shadow:0 0 0 2px #fde68a}
+  .node.pending .dot{background:#cbd5e1}
+  .node.dropped .dot{background:var(--red);box-shadow:0 0 0 2px #fecaca}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 2px var(--blue-line)}50%{box-shadow:0 0 0 6px rgba(59,130,246,.18)}}
+  .node .nm{font-size:11px;line-height:1.35;margin-top:5px;color:var(--ink-2)}
+  .node .dt{font-size:10px;color:var(--ink-3);margin-top:2px}
+  .node .gg{font-size:10px;color:var(--blue-deep);margin:1px 0 3px}
+  .node.below .gg{margin-top:4px}
+
+  /* ③ 目标航线 */
+  .goal-card{border:1px solid var(--blue-line);border-radius:11px;padding:13px 15px;margin-bottom:11px;background:#fbfdff}
+  .goal-card .hd{display:flex;align-items:center;gap:8px}
+  .goal-card .hd b{font-size:14px}
+  .goal-card .metric{font-size:11.5px;color:var(--ink-3);margin:5px 0 8px}
+  .goal-card .nums{display:flex;gap:16px;font-size:11.5px;color:var(--ink-2);margin-top:8px;flex-wrap:wrap}
+  .goal-card .nums b{color:var(--blue-deep)}
+  .ms-list{margin-top:9px;display:flex;flex-direction:column;gap:4px}
+  .ms{font-size:11.5px;color:var(--ink-2);display:flex;align-items:center;gap:7px}
+  .ms .st{width:9px;height:9px;border-radius:3px;flex:none}
+  .ms.achieved .st{background:var(--green)}.ms.in_progress .st{background:var(--blue)}
+  .ms.pending .st{background:#cbd5e1}.ms.delayed .st{background:var(--amber)}.ms.dropped .st{background:var(--red)}
+  .ms .due{margin-left:auto;color:var(--ink-3);font-size:10.5px}
+
+  /* ④ 图表 */
+  .charts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:900px){.charts{grid-template-columns:1fr}}
+  .chart-box{border:1px solid var(--blue-line);border-radius:11px;padding:13px;background:#fbfdff;position:relative}
+  .chart-box h3{font-size:12.5px;color:var(--ink-2);margin-bottom:8px;font-weight:600}
+  .chart-box .zoom-btn{position:absolute;top:9px;right:9px;width:24px;height:24px;border-radius:7px;
+    border:1px solid var(--blue-line);background:#fff;color:var(--blue-deep);cursor:pointer;font-size:14px;
+    line-height:22px;text-align:center;user-select:none;transition:all .15s}
+  .chart-box .zoom-btn:hover{background:var(--blue-bg);border-color:var(--blue)}
+  /* 图表放大弹层 */
+  .zoom-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);backdrop-filter:blur(3px);
+    display:flex;align-items:center;justify-content:center;z-index:99;padding:24px}
+  .zoom-mask .zoom-box{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(30,41,59,.3);
+    padding:22px 26px;max-width:min(92vw,860px);width:100%;position:relative;animation:zoomIn .18s ease}
+  @keyframes zoomIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+  .zoom-mask h3{font-size:15px;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .zoom-mask .zoom-close{position:absolute;top:14px;right:16px;width:28px;height:28px;border-radius:8px;
+    border:1px solid var(--gray);background:#fff;cursor:pointer;font-size:15px;color:var(--ink-2);
+    line-height:26px;text-align:center}
+  .zoom-mask .zoom-close:hover{background:#f1f5f9}
+  .zoom-body svg{width:100%!important;height:auto!important}
+  svg text{font-family:inherit}
+
+  /* ⑤ 本周计划 */
+  .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+  @media(max-width:1000px){.week-grid{grid-template-columns:repeat(2,1fr)}}
+  .day-col{background:#fbfdff;border:1px solid var(--blue-line);border-radius:11px;padding:10px}
+  .day-col.today{border-color:var(--blue);background:var(--blue-bg)}
+  .day-col .dh{font-size:12px;font-weight:600;text-align:center;padding-bottom:7px;
+               border-bottom:1px dashed var(--blue-line);margin-bottom:8px;color:var(--ink)}
+  .day-col .dh small{display:block;font-size:10px;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .task{font-size:11px;color:var(--ink-2);padding:5px 7px;border-radius:7px;margin-bottom:5px;
+        background:#fff;border:1px solid var(--gray);line-height:1.4}
+  .task .tt{display:flex;gap:4px;align-items:flex-start}
+  .task .ico{flex:none;font-size:10px}
+  .task .tm{color:var(--ink-3);font-size:10px;display:block}
+  .task.done{background:var(--green-bg);border-color:#a7f3d0}
+  .task.done .tt{text-decoration:line-through;color:var(--ink-3)}
+  .task.partial{background:var(--amber-bg);border-color:#fde68a}
+  .task.pending_confirm{background:#f8fafc;border-style:dashed}
+  .task.rollover{border-style:dashed;border-color:var(--amber)}
+  .task .rough{color:var(--amber);font-size:10px}
+  .empty-day{font-size:10.5px;color:var(--ink-3);text-align:center;padding:8px 0}
+
+  /* ⑥ 日志时间轴（可点击） */
+  .logs{display:flex;flex-direction:column;gap:0;max-height:300px;overflow-y:auto;padding-left:6px}
+  .log-row{display:flex;gap:12px;align-items:center;padding:7px 2px;font-size:12px;position:relative;
+           cursor:pointer;border-radius:8px;transition:background .12s}
+  .log-row:hover{background:var(--blue-bg)}
+  .log-row:hover .lb{border-color:var(--blue);color:var(--blue-deep)}
+  .log-row:before{content:"";position:absolute;left:64px;top:0;bottom:0;width:2px;background:var(--blue-line)}
+  .log-row:first-child:before{top:50%}.log-row:last-child:before{bottom:50%}
+  .log-row .ld{width:56px;flex:none;color:var(--ink-3);font-size:10.5px;text-align:right;position:relative;z-index:1}
+  .log-row .lb{background:#fff;border:1px solid var(--blue-line);border-radius:8px;padding:3px 10px;
+               font-size:11px;color:var(--ink-2);position:relative;z-index:1;display:flex;align-items:center;gap:5px}
+  .log-row .lb .open-ico{font-size:9px;color:var(--ink-3);opacity:0;transition:opacity .12s}
+  .log-row:hover .lb .open-ico{opacity:1}
+  .log-row.daily .lb{border-color:#dbeafe}.log-row.weekly .lb{border-color:#bfdbfe}
+  .log-row.monthly .lb{border-color:#93c5fd;background:var(--blue-bg)}
+  .log-row.yearly .lb{border-color:var(--blue);background:var(--blue-bg);color:var(--blue-deep);font-weight:600}
+  .log-row{position:relative}
+  .log-path{position:absolute;left:70px;top:100%;z-index:5;background:var(--ink);color:#fff;font-size:10.5px;
+            padding:6px 11px;border-radius:8px;white-space:nowrap;max-width:640px;overflow:hidden;
+            text-overflow:ellipsis;opacity:0;transform:translateY(-4px);transition:all .18s;pointer-events:none;
+            box-shadow:0 6px 18px rgba(30,41,59,.25)}
+  .log-path.show{opacity:1;transform:translateY(0)}
+
+  /* ⑤b 周报（结算+诊断+建议） */
+  .week-report{margin-top:16px;border:1px dashed var(--blue-line);border-radius:12px;
+               background:linear-gradient(180deg,#fbfdff,#f8fafc);padding:15px 18px}
+  .week-report h3{font-size:13.5px;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+  .week-report h3 .lv-dot{width:9px;height:9px;border-radius:50%;flex:none}
+  .wr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
+  .wr-stat{background:#fff;border:1px solid var(--blue-line);border-radius:10px;padding:9px 12px}
+  .wr-stat .k{font-size:10.5px;color:var(--ink-3)}
+  .wr-stat .v{font-size:16px;font-weight:600;color:var(--ink);margin-top:2px}
+  .wr-stat .v.green{color:var(--green)}.wr-stat .v.amber{color:var(--amber)}.wr-stat .v.red{color:var(--red)}
+  .wr-verdict{font-size:12px;color:var(--ink-2);line-height:1.6;padding:9px 12px;border-radius:9px;margin-bottom:12px}
+  .wr-verdict.green{background:var(--green-bg);border-left:3px solid var(--green)}
+  .wr-verdict.yellow{background:var(--amber-bg);border-left:3px solid var(--amber)}
+  .wr-verdict.red{background:var(--red-bg);border-left:3px solid var(--red)}
+  .wr-sug{background:#fff;border:1px solid var(--blue-line);border-radius:10px;padding:11px 14px}
+  .wr-sug h4{font-size:12px;color:var(--blue-deep);margin-bottom:7px;display:flex;align-items:center;gap:6px}
+  .wr-sug ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+  .wr-sug li{font-size:11.5px;color:var(--ink-2);line-height:1.5;padding-left:15px;position:relative}
+  .wr-sug li:before{content:"·";position:absolute;left:4px;color:var(--blue);font-weight:700}
+  .wr-empty{font-size:11.5px;color:var(--ink-3);text-align:center;padding:10px}
+  footer.foot{margin-top:26px;text-align:center;font-size:11px;color:var(--ink-3);line-height:1.9}
+  footer.foot .cred{display:block}
+  footer.foot a{color:var(--blue-deep);text-decoration:none;border-bottom:1px dashed var(--blue-line);transition:all .15s}
+  footer.foot a:hover{color:var(--blue);border-bottom-color:var(--blue)}
+  .nodata{padding:40px;text-align:center;color:var(--ink-3);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </svg>
+    </div>
+    <h1>你的司南 UCompass<small>航海仪表盘 · 定锚 → 航行 → 校准</small></h1>
+    <div class="top-meta" id="topMeta"></div>
+  </header>
+
+  <div class="grid">
+    <!-- ① 罗盘总览 -->
+    <section class="card c5" id="sec-compass">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        罗盘总览 <span class="sub" id="compassSub"></span>
+      </h2>
+      <div class="compass-row">
+        <div class="ring">
+          <svg width="150" height="150" viewBox="0 0 150 150">
+            <circle cx="75" cy="75" r="62" fill="none" stroke="#e2e8f0" stroke-width="11"/>
+            <circle id="ringArc" cx="75" cy="75" r="62" fill="none" stroke="#3b82f6" stroke-width="11"
+                    stroke-linecap="round" stroke-dasharray="0 999"/>
+          </svg>
+          <div class="val"><b id="ringVal">--%</b><span>学期进度</span></div>
+        </div>
+        <div class="stat-list" id="statList"></div>
+      </div>
+      <div class="goal-health" id="goalHealth"></div>
+    </section>
+
+    <!-- ② 航程时间轴 -->
+    <section class="card c7" id="sec-timeline">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        航程时间轴 <span class="sub" id="tlSub"></span>
+      </h2>
+      <div class="tl-scroll"><div class="tl" id="timeline"></div></div>
+    </section>
+
+    <!-- ③ 目标航线详情 -->
+    <section class="card c7" id="sec-goals">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+        目标航线详情
+      </h2>
+      <div id="goals"></div>
+    </section>
+
+    <!-- ④ 科学图表 -->
+    <section class="card c5" id="sec-charts">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+        科学图表 <span class="sub">周完成率 · 时间分配 · 趋势</span>
+      </h2>
+      <div class="charts">
+        <div class="chart-box"><h3>各周完成率</h3><span class="zoom-btn" data-zoom="chartBar" title="放大查看">⤢</span><div id="chartBar"></div></div>
+        <div class="chart-box"><h3>目标时间分配 <span style="font-weight:400;color:#94a3b8">（历史全部周）</span></h3><span class="zoom-btn" data-zoom="chartPie" title="放大查看">⤢</span><div id="chartPie"></div></div>
+        <div class="chart-box" style="grid-column:1/-1"><h3>完成率趋势</h3><span class="zoom-btn" data-zoom="chartTrendFull" title="放大查看">⤢</span><div id="chartLine"></div></div>
+      </div>
+    </section>
+
+    <!-- ⑤ 周计划（独立板块，副标题标明周次范围） -->
+    <section class="card c12" id="sec-week">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        周计划 <span class="sub" id="weekSub"></span>
+      </h2>
+      <div id="weekPlan"><div class="week-grid" id="weekGrid"></div></div>
+    </section>
+
+    <!-- ⑤b 周报（独立板块：结算+诊断+司南建议） -->
+    <section class="card c12" id="sec-report">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        周报 <span class="sub" id="reportSub"></span>
+      </h2>
+      <div id="weekReport"></div>
+    </section>
+
+    <!-- ⑥ 日志时间轴 -->
+    <section class="card c12" id="sec-logs">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        日志时间轴 <span class="sub">日 · 周 · 月 · 学期</span>
+      </h2>
+      <div class="logs" id="logs"></div>
+    </section>
+  </div>
+
+  <footer class="foot" id="foot"><span class="cred">你的司南 UCompass · 数据本地生成，单文件可分享</span><span class="cred">欢迎关注作者B站账号<a href="https://space.bilibili.com/40995160" target="_blank" rel="noopener noreferrer">@超帅气的指令师CR</a> 或 <a href="https://space.bilibili.com/3546705184164300" target="_blank" rel="noopener noreferrer">@指令师CR的咖啡馆</a></span></footer>
+</div>
+
+<script>
+const TEMPLATE_VERSION = "1.0";
+window.__UCOMPASS_DATA__ = /*__UCOMPASS_DATA__*/null;
+const D = window.__UCOMPASS_DATA__;
+
+const $ = id => document.getElementById(id);
+const pct = v => Math.round((v || 0) * 100) + "%";
+const DAY_CN = ["周日","周一","周二","周三","周四","周五","周六"];
+const TYPE_ICO = {pinned:"🔒", deadline:"📖", floating:"🌊"};
+const ST_CN = {pending:"待完成",done:"达成",partial:"部分达成",missed:"失约",
+               pending_confirm:"待确认",rolled:"已滚动",
+               achieved:"达成",in_progress:"进行中",delayed:"延期",dropped:"放弃"};
+const PHASE_CN = {anchoring:"定锚",voyaging:"航行",calibrating:"校准",archived:"已归档"};
+const URG_CN = {high:"要紧",normal:"常规",low:"缓行"};
+const LV_COLOR = {green:"#10b981", yellow:"#f59e0b", red:"#ef4444"};
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function ring(p){
+  const C = 2*Math.PI*62, arc = C*Math.min(1,Math.max(0,p||0));
+  $("ringArc").setAttribute("stroke-dasharray", arc.toFixed(1)+" "+C.toFixed(1));
+  $("ringVal").textContent = pct(p);
+}
+
+function renderCompass(){
+  if(!D){$("sec-compass").innerHTML='<div class="nodata">尚未生成数据（compass_store.py render）</div>';return}
+  const s = D.semester||{}, c = D.compass||{};
+  $("topMeta").innerHTML =
+    '<span class="pill">学期 <b>'+esc(s.start||"?")+' → '+esc(s.end||"?")+'</b></span>'+
+    '<span class="pill">第 <b>'+(s.week_now||"-")+'</b>/'+(s.weeks_total||"-")+' 周</span>'+
+    '<span class="pill">阶段 <b>'+esc(PHASE_CN[D.phase]||D.phase||"-")+'</b></span>'+
+    '<span class="pill">生成于 '+esc((D.meta||{}).generated_at||"").replace("T"," ")+'</span>';
+  $("compassSub").textContent = "锚点 · 航向 · 健康";
+  ring(s.progress);
+  $("statList").innerHTML =
+    '<div class="stat"><div class="k">连续打卡</div><div class="v">'+(c.streak_days||0)+' <small>天</small></div></div>'+
+    '<div class="stat"><div class="k">总平均完成率</div><div class="v">'+pct(c.overall_rate)+'</div></div>'+
+    '<div class="stat"><div class="k">在航目标</div><div class="v">'+
+      ((c.goal_health||[]).filter(g=>g.status==="active").length)+' <small>/ '+(c.goal_health||[]).length+'</small></div></div>'+
+    '<div class="stat"><div class="k">仪表盘版本</div><div class="v" style="font-size:14px">v'+esc((D.meta||{}).template_version||"?")+'</div></div>';
+  const gh = (c.goal_health||[]).map(g=>{
+    const noMs = !(g.milestones||[]).length;
+    return '<div class="gh-row" title="'+(noMs?'尚未进行里程碑倒排':'里程碑进度：已达成里程碑 / 总里程碑')+'">'+
+    '<span class="gh-name">'+esc(g.name)+'</span>'+
+    (g.status==="dormant"?'<span class="tag dormant">休眠</span>':'<span class="tag '+esc(g.urgency||"normal")+'">'+esc(URG_CN[g.urgency]||g.urgency||"常规")+'</span>')+
+    '<span class="gh-bar'+(noMs?' none':'')+'"><i style="width:'+(noMs?'0':pct(g.progress))+'"></i></span>'+
+    '<span class="gh-pct'+(noMs?' na':'')+'">'+(noMs?'待倒排':pct(g.progress))+'</span></div>';
+  }).join("");
+  const hasNoMs = (c.goal_health||[]).some(g=>!(g.milestones||[]).length);
+  $("goalHealth").innerHTML = (gh || '<div class="empty-day">尚无目标</div>') +
+    (gh && hasNoMs ? '<div class="gh-hint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>「待倒排」= 尚未拆解里程碑，进度条将从里程碑验收后开始点亮</div>' : '');
+}
+
+function renderTimeline(){
+  if(!D){return}
+  const tl = $("timeline");
+  const ms = (D.timeline||[]).filter(m=>m.due);
+  if(!ms.length){tl.innerHTML='<div class="empty-day">尚无里程碑</div>';$("tlSub").textContent="";return}
+  const s = D.semester||{};
+  const t0 = s.start? new Date(s.start+"T00:00:00"):new Date();
+  const t1 = s.end? new Date(s.end+"T00:00:00"):new Date(t0.getTime()+120*864e5);
+  const span = Math.max(1,(t1-t0));
+  const now = new Date();
+  // 布局算法：dot 钉在真实日期位置；文字框上下交替；
+  // 同侧文字框相距不足 LANE_GAP 时整体向右推开（时间轴加宽吸收）——数学上保证永不重叠
+  const LANE_GAP = 200;   // 同侧相邻文字框最小中心距（框宽170 + 30 间隙）
+  const DOT_GAP = 30;     // 相邻 dot 最小间距
+  const BASE_PAD = 20, BASE_INNER = 720;   // 基准坐标系（像素）
+  const sorted = ms.map(m=>{
+    const d = new Date(m.due+"T00:00:00");
+    return isNaN(d) ? null : {m, x: (d-t0)/span};
+  }).filter(Boolean).sort((a,b)=>a.x-b.x);
+  // 像素坐标上逐个放置（约束只依赖已放置节点，一次遍历收敛）
+  const pxs = sorted.map(n=> BASE_PAD + n.x*BASE_INNER);
+  for(let i=0;i<pxs.length;i++){
+    let need = -Infinity;
+    if(i>=2){ need = Math.max(need, pxs[i-2] + LANE_GAP); }  // 同侧（隔一个）文字框
+    if(i>=1){ need = Math.max(need, pxs[i-1] + DOT_GAP); }   // 相邻 dot
+    if(pxs[i] < need){ pxs[i] = need; }
+  }
+  const MIN_W = 760;
+  const lastPx = pxs.length ? pxs[pxs.length-1] : 0;
+  const W = Math.max(MIN_W, lastPx + 230);
+  const today = Math.min(1,Math.max(0,(now-t0)/span));
+  let html = '<div class="axis"></div><div class="nowline" style="left:'+(BASE_PAD+today*BASE_INNER)+'px"></div>';
+  // 同日节点二次错位：完全同一天的节点依次额外右推（每个 +55px），避免 dot 重叠堆叠
+  const sameDayShift = [];
+  let lastDue = null, sameIdx = 0;
+  for(let i=0;i<sorted.length;i++){
+    const due = sorted[i].m.due;
+    if(due === lastDue){ sameIdx++; }
+    else { sameIdx = 0; lastDue = due; }
+    sameDayShift.push(sameIdx * 55);
+  }
+  sorted.forEach((n,i)=>{
+    const pxAbs = pxs[i] + sameDayShift[i];
+    const lane = i%2;   // 0=上方（文字在线上、dot 贴线），1=下方（dot 贴线、文字在线下）
+    const cls = n.m.status||"pending";
+    const dotEl = '<div class="dot"></div>';
+    const textEl = '<div class="gg">'+esc(n.m.goal||"")+'</div>'+
+      '<div class="nm">'+esc(n.m.name)+'</div><div class="dt">'+esc(n.m.due)+' · '+esc(ST_CN[n.m.status]||n.m.status)+'</div>';
+    html += '<div class="node '+cls+(lane?" below":" above")+'" style="left:'+pxAbs+'px">'+
+      (lane ? dotEl+textEl : textEl+dotEl)+'</div>';
+  });
+  tl.style.minWidth = (Math.max(W, lastPx + sameDayShift[sameDayShift.length-1] + 230)) + "px";
+  tl.innerHTML = html;
+  $("tlSub").textContent = ms.length+" 个节点 · "+(s.start||"")+" ~ "+(s.end||"")+(W>MIN_W?" · 可横向滚动":"");
+}
+
+function renderGoals(){
+  if(!D){return}
+  const gs = ((D.compass||{}).goal_health)||[];
+  $("goals").innerHTML = gs.map(g=>
+    '<div class="goal-card"><div class="hd"><b>'+esc(g.name)+'</b>'+
+    '<span class="tag '+(g.status==="dormant"?"dormant":esc(g.urgency||"normal"))+'">'+
+      (g.status==="dormant"?"休眠中":esc(URG_CN[g.urgency]||g.urgency||"常规"))+'</span></div>'+
+    '<div class="metric">验收线：'+esc(g.metric||"—")+'</div>'+
+    '<div class="ms-list">'+(g.milestones||[]).map(m=>
+      '<div class="ms '+esc(m.status)+'"><span class="st"></span>'+esc(m.name)+
+      '<span class="due">'+esc(m.due)+'</span></div>').join("")+'</div>'+
+    '<div class="nums"><span>里程碑进度 <b>'+pct(g.progress)+'</b>'+(g.progress_parts?'<small>（'+g.progress_parts+'）</small>':'')+'</span>'+
+    '<span>累计投入 <b>'+(g.hours_done||0)+'h</b></span>'+
+    '<span>周预算 <b>'+(g.budget||0)+'h</b></span></div></div>').join("") ||
+    '<div class="empty-day">尚无目标（先定锚）</div>';
+}
+
+/* ── 原生 SVG 图表（零依赖） ── */
+function svgEl(tag,attrs){const e=document.createElementNS("http://www.w3.org/2000/svg",tag);
+  for(const k in attrs)e.setAttribute(k,attrs[k]);return e}
+
+function renderBar(){
+  const box = $("chartBar"); if(!D)return;
+  const data = (D.charts||{}).weekly_rates||[];
+  if(!data.length){box.innerHTML='<div class="empty-day">尚无周数据</div>';return}
+  const W=330,H=150,pad=26;
+  const svg = svgEl("svg",{width:"100%",viewBox:"0 0 "+W+" "+H});
+  [0,.5,1].forEach(g=>{
+    const y = H-22-g*(H-46);
+    svg.appendChild(svgEl("line",{x1:pad,y1:y,x2:W-6,y2:y,stroke:"#e2e8f0","stroke-width":1}));
+    const t=svgEl("text",{x:pad-4,y:y+3,"text-anchor":"end","font-size":8,fill:"#94a3b8"});
+    t.textContent=g*100+"%";svg.appendChild(t);
+  });
+  const step = (W-pad-16)/data.length;
+  const bw = Math.min(34,step-8);
+  data.forEach((d,i)=>{
+    const x = pad+8+i*step+(step-bw)/2;
+    const h = Math.max(2,d.rate*(H-46));
+    const c = LV_COLOR[d.level]||"#3b82f6";
+    svg.appendChild(svgEl("rect",{x:x,y:H-22-h,width:bw,height:h,rx:3,fill:c,opacity:.85}));
+    const lbl = svgEl("text",{x:x+bw/2,y:H-8,"text-anchor":"middle","font-size":8,fill:"#64748b"});
+    lbl.textContent = d.label||((d.week_id||"").split("-W")[1]||d.week_id); svg.appendChild(lbl);
+    const val = svgEl("text",{x:x+bw/2,y:H-27-h,"text-anchor":"middle","font-size":8,fill:"#334155"});
+    val.textContent = Math.round(d.rate*100); svg.appendChild(val);
+  });
+  box.innerHTML="";box.appendChild(svg);
+}
+
+function renderPie(){
+  const box = $("chartPie"); if(!D)return;
+  const data = (D.charts||{}).goal_pie||[];
+  if(!data.length){box.innerHTML='<div class="empty-day">尚无分配数据</div>';return}
+  const W=330,H=170,cx=W/2,cy=H/2+2,r=52;
+  const svg = svgEl("svg",{width:"100%",viewBox:"0 0 "+W+" "+H});
+  const colors = ["#3b82f6","#10b981","#f59e0b","#8b5cf6","#ef4444","#06b6d4"];
+  const total = data.reduce((a,b)=>a+b.value,0)||1;
+  let a0 = -Math.PI/2;
+  data.forEach((d,i)=>{
+    const a1 = a0 + d.value/total*2*Math.PI;
+    const large = (a1-a0)>Math.PI?1:0;
+    const p = (a)=>[cx+r*Math.cos(a),cy+r*Math.sin(a)];
+    const x0=p(a0)[0].toFixed(1), y0=p(a0)[1].toFixed(1);
+    const x1=p(a1)[0].toFixed(1), y1=p(a1)[1].toFixed(1);
+    svg.appendChild(svgEl("path",{d:"M"+cx+" "+cy+" L"+x0+" "+y0+
+      " A"+r+" "+r+" 0 "+large+" 1 "+x1+" "+y1+" Z",
+      fill:colors[i%colors.length],opacity:.88,stroke:"#fff","stroke-width":1.5}));
+    a0=a1;
+  });
+  svg.appendChild(svgEl("circle",{cx:cx,cy:cy,r:26,fill:"#fff"}));
+  const c0=svgEl("text",{x:cx,y:cy+3,"text-anchor":"middle","font-size":10,fill:"#1e293b"});
+  c0.textContent="总 "+Math.round(total)+"h";svg.appendChild(c0);
+  let ly = 10;
+  data.forEach((d,i)=>{
+    svg.appendChild(svgEl("rect",{x:6,y:ly,width:8,height:8,rx:2,fill:colors[i%colors.length]}));
+    const t=svgEl("text",{x:18,y:ly+8,"font-size":9,fill:"#475569"});
+    t.textContent = d.label+" "+Math.round(d.value/total*100)+"% ("+Math.round(d.value)+"h)";
+    svg.appendChild(t); ly+=14;
+  });
+  box.innerHTML="";box.appendChild(svg);
+}
+
+function renderLine(){
+  const box = $("chartLine"); if(!D)return;
+  const rates = (D.charts||{}).weekly_rates||[];
+  const data = (D.charts||{}).trend||[];
+  if(data.length<2){box.innerHTML='<div class="empty-day">趋势需 ≥2 周数据</div>';return}
+  const W=680,H=130,pad=28;
+  const svg = svgEl("svg",{width:"100%",viewBox:"0 0 "+W+" "+H});
+  [0,.5,1].forEach(g=>{
+    const y = H-24-g*(H-44);
+    svg.appendChild(svgEl("line",{x1:pad,y1:y,x2:W-8,y2:y,stroke:"#e2e8f0","stroke-width":1}));
+    const t=svgEl("text",{x:pad-4,y:y+3,"text-anchor":"end","font-size":8,fill:"#94a3b8"});
+    t.textContent=g*100+"%";svg.appendChild(t);
+  });
+  const xs = data.map((_,i)=>pad+8+i*((W-pad-24)/(data.length-1)));
+  const ys = data.map(v=>H-24-Math.min(1,v)*(H-44));
+  const line = data.map((v,i)=>(i?"L":"M")+xs[i].toFixed(1)+" "+ys[i].toFixed(1)).join(" ");
+  const area = line+" L"+xs[xs.length-1].toFixed(1)+" "+(H-24)+" L"+xs[0].toFixed(1)+" "+(H-24)+" Z";
+  svg.appendChild(svgEl("path",{d:area,fill:"rgba(59,130,246,.12)"}));
+  svg.appendChild(svgEl("path",{d:line,fill:"none",stroke:"#3b82f6","stroke-width":2.2,
+    "stroke-linecap":"round","stroke-linejoin":"round"}));
+  data.forEach((v,i)=>{
+    svg.appendChild(svgEl("circle",{cx:xs[i],cy:ys[i],r:3.2,fill:"#fff",stroke:"#3b82f6","stroke-width":2}));
+    if(i%2===0||i===data.length-1){
+      const t=svgEl("text",{x:xs[i],y:ys[i]-8,"text-anchor":"middle","font-size":8,fill:"#334155"});
+      t.textContent=Math.round(v*100)+"%";svg.appendChild(t);
+    }
+    // X 轴周次标签（教学周）
+    const lbl = svgEl("text",{x:xs[i],y:H-6,"text-anchor":"middle","font-size":10,fill:"#64748b"});
+    lbl.textContent = (rates[i]&&rates[i].label) ? rates[i].label : ("第"+(i+1)+"周");
+    svg.appendChild(lbl);
+  });
+  box.innerHTML="";box.appendChild(svg);
+}
+
+function renderWeek(){
+  if(!D){return}
+  const wk = D.current_week;
+  if(!wk){$("weekPlan").innerHTML='<div class="nodata">暂无活跃周计划（周日晚对我说"复盘本周"后生成新周计划）</div>';$("weekSub").textContent="";return}
+  const todayStr = new Date().toISOString().slice(0,10);
+  const days = (wk.days||[]).slice().sort((a,b)=>a.date<b.date?-1:1);
+  const range = days.length ? (days[0].date.slice(5)+" ~ "+days[days.length-1].date.slice(5)) : "";
+  $("weekSub").textContent = (wk.week_label||wk.week_id||"")+(range?"（"+range+"）":"")+" · 只显示标准量";
+  const html = days.map(d=>{
+    const dt = new Date(d.date+"T00:00:00");
+    const isToday = d.date===todayStr;
+    const tasks = (d.tasks||[]).map(t=>{
+      const cls = [t.status,t.rollover>0?"rollover":""].join(" ").trim();
+      return '<div class="task '+cls+'"><div class="tt"><span class="ico">'+
+        (TYPE_ICO[t.type]||"🌊")+'</span><span>'+esc(t.title)+
+        (t.rough?' <span class="rough">⚠</span>':"")+
+        (t.rollover>0?' <span class="rough">+'+t.rollover+'↩</span>':"")+'</span></div>'+
+        (t.time?'<span class="tm">'+esc(t.time)+'</span>':"")+'</div>';
+    }).join("") || '<div class="empty-day">休息 / 自由</div>';
+    return '<div class="day-col'+(isToday?" today":"")+'"><div class="dh">'+
+      DAY_CN[dt.getDay()]+'<small>'+d.date.slice(5)+'</small></div>'+tasks+'</div>';
+  }).join("");
+  $("weekGrid").innerHTML = html;
+}
+
+function renderLogs(){
+  if(!D){return}
+  const logs = D.logs_index||[];
+  const typeName = {daily:"日",weekly:"周",monthly:"月",yearly:"学期"};
+  $("logs").innerHTML = logs.map(l=>{
+    // 显示标签：周日志用教学周标签；日期列：周类型显示周标签，日/月/学期显示日期
+    const label = l.label ? l.label : (l.file||"");
+    const dateCol = (l.type==="weekly" && l.label) ? l.label : (l.date||"").slice(0,10);
+    return '<div class="log-row '+esc(l.type)+'" data-file="'+esc(l.file)+'" data-type="'+esc(l.type)+'" title="点击打开文件">'+
+    '<span class="ld">'+esc(dateCol)+
+    '</span><span class="lb">'+(typeName[l.type]||"?")+' · '+esc(label)+'<span class="open-ico"> ↗</span></span></div>';
+  }).join("") ||
+    '<div class="empty-day">暂无日志</div>';
+}
+// 日志点击：同目录日志文件已在数据目录内，双击生成的 HTML 单文件无跨文件权限——
+// 点击行为提供两种：① 数据目录内（相对路径可解析时）跳转打开；② 复制路径提示
+document.addEventListener("click", e=>{
+  const row = e.target.closest(".log-row");
+  if(!row){return}
+  const file = row.dataset.file, typ = row.dataset.type;
+  if(!file){return}
+  const guess = {daily:"daily/",weekly:"weekly/",monthly:"monthly/",yearly:"yearly/"}[typ]||"";
+  // 场景A：生成物与 logs/ 同目录（file:// 或同根 http 服务）→ 相对导航直接打开
+  // 场景B：生成物被移动/分享（脱离数据目录）→ 行内提示完整路径
+  if(location.protocol === "file:"){
+    try{ location.href = "logs/" + guess + encodeURIComponent(file); return; }catch(err){}
+  }
+  const base = (D.logs_base || "");
+  rowFlash(row, base + "logs" + (guess ? "/" + guess : "") + file);
+});
+// 非弹出式路径提示（替代 alert：在行内展开显示，点击别处收起）
+function rowFlash(row, fullpath){
+  document.querySelectorAll(".log-path").forEach(n=>n.remove());
+  const tip = document.createElement("div");
+  tip.className = "log-path";
+  tip.textContent = "📄 " + fullpath;
+  tip.title = "路径已显示，可前往该位置打开；生成物与 logs/ 同目录时点击会直接打开";
+  row.appendChild(tip);
+  setTimeout(()=>{ tip.classList.add("show"); }, 10);
+  const dismiss = ev => {
+    if(!tip.contains(ev.target)){ tip.classList.remove("show"); setTimeout(()=>tip.remove(), 200);
+      document.removeEventListener("click", dismiss); }
+  };
+  setTimeout(()=>document.addEventListener("click", dismiss), 50);
+}
+
+/* ── 周报板块（独立 section：结算数据 + 诊断 + 司南建议） ── */
+function renderWeekReport(){
+  if(!D){return}
+  const box = $("weekReport");
+  const wr = D.week_report;
+  if(!wr){
+    $("reportSub").textContent = "";
+    box.innerHTML = '<div class="week-report"><div class="wr-empty">最近一周尚未结算（周日晚对我说"复盘本周"即可生成）</div></div>';
+    return;
+  }
+  const LV_CN = {green:"🟢 轻度", yellow:"🟡 中度", red:"🔴 重度"};
+  const LV_CLS = {green:"green", yellow:"yellow", red:"red"};
+  const sug = (wr.suggestions||[]);
+  $("reportSub").textContent = (wr.week_label||wr.week_id||"")+(wr.range?"（"+wr.range+"）":"");
+  box.innerHTML = '<div class="week-report">'+
+    '<div class="wr-grid">'+
+      '<div class="wr-stat"><div class="k">本周完成率</div><div class="v '+(LV_CLS[wr.level]||"")+'">'+pct(wr.rate)+'</div></div>'+
+      '<div class="wr-stat"><div class="k">达成 / 部分 / 失约</div><div class="v">'+(wr.done||0)+' / '+(wr.partial||0)+' / '+(wr.missed||0)+'</div></div>'+
+      '<div class="wr-stat"><div class="k">连续打卡</div><div class="v">'+(wr.streak||0)+' 天</div></div>'+
+      (wr.rollover_total?'<div class="wr-stat"><div class="k">滚动欠账</div><div class="v amber">'+wr.rollover_total+'</div></div>':"")+
+    '</div>'+
+    '<div class="wr-verdict '+(LV_CLS[wr.level]||"")+'"><b>诊断：'+(LV_CN[wr.level]||"—")+'</b> — '+
+      esc(wr.verdict||"")+'</div>'+
+    (sug.length?'<div class="wr-sug"><h4>💡 司南建议</h4><ul>'+
+      sug.map(s=>'<li>'+esc(s)+'</li>').join("")+'</ul></div>':
+      '<div class="wr-empty">（本周无专项建议）</div>')+
+    '</div>';
+}
+
+/* ── 图表放大查看 ── */
+const ZOOM_TITLES = {chartBar:"各周完成率", chartPie:"目标时间分配", chartTrendFull:"完成率趋势"};
+function openZoom(srcId){
+  // 趋势图按钮指向虚拟ID：无需源元素，直接重画大尺寸版（修复：原实现因找不到元素而静默失效）
+  let bodySvg = null;
+  if(srcId === "chartTrendFull"){
+    bodySvg = drawLine(860, 300);   // 放大重画：更大画布
+  }else{
+    const src = $(srcId);
+    if(!src){return}
+    const node = src.querySelector("svg");
+    bodySvg = node ? node.cloneNode(true) : null;
+  }
+  if(!bodySvg){return}
+  const mask = document.createElement("div");
+  mask.className = "zoom-mask";
+  mask.innerHTML = '<div class="zoom-box"><button class="zoom-close" title="关闭">✕</button>'+
+    '<h3>'+esc(ZOOM_TITLES[srcId]||"图表")+'</h3><div class="zoom-body"></div></div>';
+  mask.querySelector(".zoom-body").appendChild(bodySvg);
+  document.body.appendChild(mask);
+  const close = ()=>{ mask.remove(); document.removeEventListener("keydown", onKey); };
+  mask.addEventListener("click", e=>{ if(e.target===mask){ close(); } });
+  mask.querySelector(".zoom-close").addEventListener("click", close);
+  const onKey = e=>{ if(e.key==="Escape"){ close(); } };
+  document.addEventListener("keydown", onKey);
+}
+// 放大版折线图重画（尺寸参数化）
+function drawLine(W,H){
+  const rates = (D.charts||{}).weekly_rates||[];
+  const data = (D.charts||{}).trend||[];
+  if(data.length<2){return null}
+  const pad=40;
+  const svg = svgEl("svg",{width:"100%",viewBox:"0 0 "+W+" "+H});
+  [0,.25,.5,.75,1].forEach(g=>{
+    const y = H-34-g*(H-60);
+    svg.appendChild(svgEl("line",{x1:pad,y1:y,x2:W-14,y2:y,stroke:"#e2e8f0","stroke-width":1}));
+    const t=svgEl("text",{x:pad-6,y:y+3,"text-anchor":"end","font-size":11,fill:"#94a3b8"});
+    t.textContent=g*100+"%";svg.appendChild(t);
+  });
+  const xs = data.map((_,i)=>pad+12+i*((W-pad-32)/(data.length-1)));
+  const ys = data.map(v=>H-34-Math.min(1,v)*(H-60));
+  const line = data.map((v,i)=>(i?"L":"M")+xs[i].toFixed(1)+" "+ys[i].toFixed(1)).join(" ");
+  const area = line+" L"+xs[xs.length-1].toFixed(1)+" "+(H-34)+" L"+xs[0].toFixed(1)+" "+(H-34)+" Z";
+  svg.appendChild(svgEl("path",{d:area,fill:"rgba(59,130,246,.12)"}));
+  svg.appendChild(svgEl("path",{d:line,fill:"none",stroke:"#3b82f6","stroke-width":2.6,
+    "stroke-linecap":"round","stroke-linejoin":"round"}));
+  data.forEach((v,i)=>{
+    svg.appendChild(svgEl("circle",{cx:xs[i],cy:ys[i],r:4,fill:"#fff",stroke:"#3b82f6","stroke-width":2.2}));
+    const t=svgEl("text",{x:xs[i],y:ys[i]-11,"text-anchor":"middle","font-size":11,fill:"#334155"});
+    t.textContent=Math.round(v*100)+"%";svg.appendChild(t);
+    // X 轴周次标签（教学周，放大版）
+    const lbl = svgEl("text",{x:xs[i],y:H-12,"text-anchor":"middle","font-size":11,fill:"#64748b"});
+    lbl.textContent = (rates[i]&&rates[i].label) ? rates[i].label : ("第"+(i+1)+"周");
+    svg.appendChild(lbl);
+  });
+  return svg;
+}
+document.addEventListener("click", e=>{
+  const btn = e.target.closest(".zoom-btn");
+  if(btn){ openZoom(btn.dataset.zoom); }
+});
+
+(function boot(){
+  if(!D){
+    document.querySelectorAll(".card").forEach(c=>{
+      if(c.id!=="sec-compass") c.innerHTML='<div class="nodata">尚未注入数据</div>';
+    });
+  }
+  renderCompass(); renderTimeline(); renderGoals();
+  renderBar(); renderPie(); renderLine(); renderWeek(); renderWeekReport(); renderLogs();
+  if(D && D.meta && D.meta.template_version && D.meta.template_version!==TEMPLATE_VERSION){
+    // 版本告警只替换第一行（保留作者署名行）
+    $("foot").querySelector(".cred").textContent = "⚠ 模板版本("+TEMPLATE_VERSION+")与数据版本("+D.meta.template_version+")不一致，建议重新 render";
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Python 运行时缓存（硬禁止项：不应随技能分发）
+__pycache__/
+*.pyc
+
+# 数据备份与临时文件
+*.bak
+*.pre-final.bak
+.temp/
+
+# 系统文件
+Thumbs.db
+.DS_Store

@@ -1,0 +1,88 @@
+{
+  "source": "课表.xlsx",
+  "parsed_at": "2026-10-25T01:07:19",
+  "weekly": [
+    {
+      "day": 1,
+      "period": 1,
+      "start": "08:00",
+      "end": "09:40",
+      "course": "高等数学A(上)",
+      "room": "教三405",
+      "weeks": "1-20"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "start": "08:00",
+      "end": "09:40",
+      "course": "大学英语(2) 文B201",
+      "room": null,
+      "weeks": "1-20"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "start": "08:00",
+      "end": "09:40",
+      "course": "高等数学A(上)",
+      "room": "教三405",
+      "weeks": "1-20"
+    },
+    {
+      "day": 1,
+      "period": 3,
+      "start": "14:00",
+      "end": "15:40",
+      "course": "C语言程序设计 机房3",
+      "room": "机房",
+      "weeks": "1-20"
+    },
+    {
+      "day": 3,
+      "period": 3,
+      "start": "14:00",
+      "end": "15:40",
+      "course": "线性代数",
+      "room": "教二203",
+      "weeks": "1-20"
+    },
+    {
+      "day": 4,
+      "period": 3,
+      "start": "14:00",
+      "end": "15:40",
+      "course": "高等数学A(上)",
+      "room": "教三405",
+      "weeks": "1-20"
+    },
+    {
+      "day": 5,
+      "period": 3,
+      "start": "14:00",
+      "end": "15:40",
+      "course": "体育",
+      "room": "操场",
+      "weeks": "1-20"
+    },
+    {
+      "day": 2,
+      "period": 5,
+      "start": "19:00",
+      "end": "20:40",
+      "course": "数据结构实验 计302",
+      "room": null,
+      "weeks": "1-20"
+    },
+    {
+      "day": 4,
+      "period": 5,
+      "start": "19:00",
+      "end": "20:40",
+      "course": "大学英语(2) 文B201",
+      "room": null,
+      "weeks": "1-20"
+    }
+  ],
+  "exceptions": []
+}

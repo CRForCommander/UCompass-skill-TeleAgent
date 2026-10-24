@@ -1,0 +1,153 @@
+{
+  "week_id": "2026-W47",
+  "plan": {
+    "week_id": "2026-W47",
+    "goal_time_alloc": {
+      "g1": 6.0,
+      "g2": 3.0
+    },
+    "days": [
+      {
+        "date": "2026-11-16",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "套卷③（最后一套完整限时）",
+            "type": "deadline",
+            "granularity": "block",
+            "time": "19:00-21:00",
+            "deadline": "2026-11-18",
+            "quota_standard": 2,
+            "quota_minimum": 1.2,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t201"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-18",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "套卷③错题清零",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "19:00-20:30",
+            "quota_standard": 1.5,
+            "quota_minimum": 1,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t202"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-19",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：考前最后一球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t203"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-21",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "考前夜：公式卡+早睡（23:00前）",
+            "type": "floating",
+            "granularity": "fragment",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t204"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-22",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "期中考试（高数）",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "09:00-11:00",
+            "deadline": "2026-11-22",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "high",
+            "rough": false,
+            "status": "done",
+            "id": "t205"
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c2",
+      "date": "2026-11-16",
+      "task_id": "t201",
+      "note": "做完了估分81",
+      "timestamp": "2026-10-25T03:24:01",
+      "makeup": false,
+      "amount": 81.0
+    },
+    {
+      "id": "c3",
+      "date": "2026-11-18",
+      "task_id": "t202",
+      "note": "错题全部清了",
+      "timestamp": "2026-10-25T03:24:02",
+      "makeup": false,
+      "amount": 1.5
+    },
+    {
+      "id": "c4",
+      "date": "2026-11-19",
+      "task_id": "t203",
+      "note": "考前一打，压力释放",
+      "timestamp": "2026-10-25T03:24:02",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c5",
+      "date": "2026-11-21",
+      "task_id": "t204",
+      "note": "22点半就睡了",
+      "timestamp": "2026-10-25T03:24:02",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c6",
+      "date": "2026-11-22",
+      "task_id": "t205",
+      "note": "考完了！自我感觉良好",
+      "timestamp": "2026-10-25T03:24:02",
+      "makeup": false,
+      "amount": 1.0
+    }
+  ],
+  "rate": 1.0,
+  "level": "green"
+}

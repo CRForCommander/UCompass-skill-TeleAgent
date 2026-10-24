@@ -1,0 +1,107 @@
+{
+  "week_id": "2027-W02",
+  "plan": {
+    "week_id": "2027-W02",
+    "goal_time_alloc": {
+      "g1": 0.5,
+      "g2": 2.0,
+      "g3": 0
+    },
+    "days": [
+      {
+        "date": "2027-01-11",
+        "tasks": [
+          {
+            "goal_id": null,
+            "title": "考后修整：自然醒",
+            "type": "floating",
+            "granularity": "block",
+            "time": null,
+            "quota_standard": 1,
+            "quota_minimum": 0.5,
+            "urgency": "low",
+            "rough": false,
+            "status": "done",
+            "id": "t180",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2027-01-13",
+        "tasks": [
+          {
+            "goal_id": "g1",
+            "title": "学期复盘：成绩确认与目标验收",
+            "type": "floating",
+            "granularity": "block",
+            "time": null,
+            "quota_standard": 0.5,
+            "quota_minimum": 0.3,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t181",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      },
+      {
+        "date": "2027-01-16",
+        "tasks": [
+          {
+            "goal_id": "g2",
+            "title": "篮球：学期最后一场球局",
+            "type": "pinned",
+            "granularity": "block",
+            "time": "15:50-18:20",
+            "quota_standard": 1,
+            "quota_minimum": 0.6,
+            "urgency": "normal",
+            "rough": false,
+            "status": "done",
+            "id": "t182",
+            "rollover": 0,
+            "adjustment_log": [],
+            "deadline": null
+          }
+        ]
+      }
+    ]
+  },
+  "checkins": [
+    {
+      "id": "c34",
+      "date": "2027-01-11",
+      "task_id": "t180",
+      "note": "睡到自然醒，考后修整",
+      "timestamp": "2026-10-25T04:20:09",
+      "makeup": false,
+      "amount": 1.0
+    },
+    {
+      "id": "c35",
+      "date": "2027-01-13",
+      "task_id": "t181",
+      "note": "成绩78确认，目标达成，学期复盘走起",
+      "timestamp": "2026-10-25T04:20:09",
+      "makeup": false,
+      "amount": 78.0
+    },
+    {
+      "id": "c36",
+      "date": "2027-01-16",
+      "task_id": "t182",
+      "note": "学期最后一场球局，赢了",
+      "timestamp": "2026-10-25T04:20:09",
+      "makeup": false,
+      "amount": 1.0
+    }
+  ],
+  "rate": 1.0,
+  "level": "green"
+}
